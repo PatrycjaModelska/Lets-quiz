@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="row">
+        <div class="col-4">
+            <h4>{{ request.user.username | upper }}</h4>
+            <a href="{% url 'password_change' %}">Zmień hasło</a>
+        </div>
+        <div class="col-8">
+            <p>Twoje Quizy:</p>
+        </div>
+
+    </div>
+{% endblock %}
