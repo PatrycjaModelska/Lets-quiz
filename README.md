@@ -1,4 +1,4 @@
-# Let's quiz - play with friends
+# Let's quiz 
 ![tekst alternatywny](./images/dashboard.JPG)
 
 * [About](#about)
