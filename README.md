@@ -30,5 +30,4 @@ python manage.py runserver
 The project will be available at **127.0.0.1:8000**.
 
 ## Inspiration
-This app is inspired by Vitor Freitas from [@Simply is better than complex](https://simpleisbetterthancomplex.com/tutorial/2018/01/18/how-to-implement-multiple-user-types-with-django.html#practical-example)
-and Antonio Mele's book [@Django 3. Praktyczne tworzenie aplikacji sieciowych](https://helion.pl/ksiazki/django-3-praktyczne-tworzenie-aplikacji-sieciowych-wydanie-iii-antonio-mel,dj3pt3.htm#format/d)
+This app is inspired by Vitor Freitas from [@Simply is better than complex](https://simpleisbetterthancomplex.com/tutorial/2018/01/18/how-to-implement-multiple-user-types-with-django.html#practical-example) and Antonio Mele's book [@Django 3. Praktyczne tworzenie aplikacji sieciowych](https://helion.pl/ksiazki/django-3-praktyczne-tworzenie-aplikacji-sieciowych-wydanie-iii-antonio-mel,dj3pt3.htm#format/d).
