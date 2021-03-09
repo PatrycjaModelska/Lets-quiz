@@ -1,7 +1,7 @@
-#Let's quiz
+# Let's quiz
 ![tekst alternatywny](./images/dashboard.JPG)
 
-##Main points:
+## Main points:
 * [About](#about)
 * [Technologies](#technologies)
 * [Running locally](#running-locally)
