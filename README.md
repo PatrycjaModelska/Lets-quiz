@@ -1,7 +1,6 @@
-# Let's quiz
+# Let's quiz - play with friends
 ![tekst alternatywny](./images/dashboard.JPG)
 
-## Main points:
 * [About](#about)
 * [Technologies](#technologies)
 * [Running locally](#running-locally)
