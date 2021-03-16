@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+ <h1>Edycja zdjęcia</h1>
+ <p>Nowe zdjęcie możesz załadować za pomocą poniższego formularza:</p>
+ <form action="." method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ profile_form.as_p }}
+    <p><input type="submit" value="Zapisz zmiany"></p>
+ </form>
+{% endblock %}

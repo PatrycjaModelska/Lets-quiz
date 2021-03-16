@@ -1,9 +1,18 @@
+
 {% extends 'base.html' %}
 {% block content %}
     <div class="row">
         <div class="col-4">
             <h4>{{ request.user.username | upper }}</h4>
-            <a href="{% url 'password_change' %}">Zmień hasło</a>
+            <div class="container">
+                <img class="profile_image" src="{{ request.user.profile.get_photo_url }}"> 
+            </div>
+            <div class="container">
+                <ul class="user_tools">
+                <ol class="tools_items"><a href="{% url 'edit_photo' %}">Zmień zdjęcie</a></ol>
+                <ol class="tools_items"><a href="{% url 'password_change' %}">Zmień hasło</a></ol>
+                <ul>
+            </div>
         </div>
         <div class="col-8">
             <p>Twoje Quizy:</p>
