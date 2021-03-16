@@ -1,5 +1,5 @@
 # Let's quiz 
-![tekst alternatywny](./images/dashboard.JPG)
+![tekst alternatywny](./images/profile_page.JPG)
 
 * [About](#about)
 * [Technologies](#technologies)
