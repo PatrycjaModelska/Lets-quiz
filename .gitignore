@@ -104,5 +104,6 @@ ENV/
 
 .idea/
 static/
+media/profile_images/
 
 .vscode

@@ -13,7 +13,7 @@ class Profile(models.Model):
         if self.photo and hasattr(self.photo, 'url'):
             return self.photo.url
         else:
-            return "/images/default_profile.png"
+            return "/media/default_profile.png"
 
     def __str__(self):
         return self.user.username

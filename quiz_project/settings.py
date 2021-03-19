@@ -121,11 +121,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_URL = '/images/'
+MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = [BASE_DIR.joinpath('static')]
 
-MEDIA_ROOT = BASE_DIR.joinpath('static/images')
+MEDIA_ROOT = BASE_DIR.joinpath('media/')
 
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = 'login'
