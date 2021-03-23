@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+  font-size: 17px;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  position: fixed;
+  top: 200px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #f1f1f1;
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+}
+
+.btn-light {
+    color: #212529;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    text-decoration: none;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
+</style>
+</head>
+    <body>
+
+        <video autoplay muted loop id="myVideo">
+            <source src="{% static 'Fireworks.mp4' %}" type="video/mp4">
+        </video>
+
+        <div class="content">
+            <h2>Brawo {{ result.user }}!</h2>
+            <p>Twój wynik to:</p> 
+            <h1> {{ result.score }} na {{ result.quiz.get_question.count}}</h1>
+            <a href="{% url 'profile' %}" class="btn btn-light"  role="button">Wróć do profilu</a>
+        </div>  
+    </body>
+</html>

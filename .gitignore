@@ -103,7 +103,6 @@ ENV/
 *.sqlite3
 
 .idea/
-static/
-media/profile_images/
+media/
 
 .vscode

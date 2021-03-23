@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="quiz_title" style="text-align: center;">
+        <h3>{{ quiz.name }}</h3>
+        <p>({{quiz.get_question.count}} pytań)</p>
+    </div>
+    <div class="quiz_question" style="margin: 10px; padding: 10px;">
+
+        <form action="." method="POST">
+            {% csrf_token %}
+            <ol>
+            {% for question in quiz.get_question %}
+                <li> <b>{{question}}</b>
+                <ul style="margin: 10px">
+                {% for answer in question.get_answer %}
+                    <li style="list-style-type: none; margin: 10px; "><label><input type="radio" name="{{question.id}}" value="{{answer.id}}" />  {{answer}}</label></li>
+                {% endfor %}
+                </ul>
+                </li>
+            {% endfor %}
+            </ol>
+            <input class="btn btn-primary" type="submit" value="Sprawdź wynik">
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block content %}
+<div class="container" style="justify-content: center; display: flex; ">
+ <a href="#" class="card">
+    <img class="card-img-top" src="{% static 'create_quiz.png' %}" alt="Stwórz quiz">
+    <div class="card-body">
+      <h5 class="card-title">Stwórz swój quiz!</h5>
+    </div>
+  </a>
+
+ <a href="{% url 'quiz_list' %}" class="card">
+    <img class="card-img-top" src="{% static 'play_quiz.png' %}" alt="Graj">
+    <div class="card-body">
+      <h5 class="card-title">Zagraj!</h5>
+    </div>
+  </a>
+ </div>
+{% endblock %}

@@ -3,7 +3,7 @@
 {% block content %}
     <div class="row">
         <div class="col-4">
-            <h4>{{ request.user.username | upper }}</h4>
+            <div class="title" style="text-align: center;"> <h4>{{ request.user.username | upper }}</h4></div>
             <div class="container">
                 <img class="profile_image" src="{{ request.user.profile.get_photo_url }}"> 
             </div>
@@ -15,7 +15,24 @@
             </div>
         </div>
         <div class="col-8">
-            <p>Twoje Quizy:</p>
+            <div class="your_quizzes">
+                <h4>Twoje Quizy ({{quizzes.count}}):</h4>
+                <ol>
+                {% for quiz in quizzes %}
+                    <li>{{quiz.name}}</li>
+                {% endfor%}
+                </ol>
+
+            </div>
+            <div class="your_quizzes">
+                <h4>Rozwiązane quizy({{results.count}}):</h4>
+                <ol>
+                {% for result in results %}
+                    <li>{{result.quiz.name}} - wynik {{result.score}}/{{result.quiz.get_question.count}}</li>
+                {% endfor%}
+                </ol>
+
+            </div>
         </div>
 
     </div>

@@ -5,13 +5,14 @@ from .forms import ProfileEditForm
 from django.urls import reverse_lazy
 from django.views import generic
 from .models import Profile
+from quiz.models import Quiz, Result
+
 
 # view SignUpView based on class
 # class SignUpView(generic.CreateView):
 #     form_class = UserCreationForm
 #     success_url = reverse_lazy('dashboard')
 #     template_name = 'registration/signup.html'
-
 
 
 # view SignUpViewbased on function
@@ -30,7 +31,9 @@ def SignUpView(request):
 
 @login_required
 def profile(request):
-    return render(request, 'profile.html')
+    quizzes = Quiz.objects.filter(owner=request.user.profile)
+    results = Result.objects.filter(user=request.user.profile)
+    return render(request, 'profile.html', {'quizzes': quizzes, 'results': results})
 
 
 @login_required

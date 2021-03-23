@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'account',
     'dashboard',
+    'quiz',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [

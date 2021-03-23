@@ -1,12 +1,12 @@
 {% load static %}
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
+<html>
 <head>
     <style type="text/css">
         .header {
             background-color: orange;
             font-family: fantasy;
-            font-size: 50px;
+            font-size: 90px;
             color: white;
             height: 150px;
             display: flex;
@@ -24,10 +24,28 @@
             width: 100%;
             margin-right: auto;
             margin-left: auto;
-            min-height: 500px;
+            min-height: 1000px;
             padding: 30px;
-        }
 
+        }
+        .card {
+            width: 17rem; 
+            height: 17rem; 
+            display: inline-block; 
+            margin: 20px; 
+            padding: 10px;
+            text-align: center;
+        }
+        a.card, a.card:active, a.card:link  {
+        color: #212529;
+        text-decoration: none;
+        }
+        a.card:hover {
+        /* background-color: orange; */
+        text-decoration: none;
+        border: 8px solid;
+        border-color: orange;
+        }
         .profile_image {
             width: 100%;
             margin-right: auto;
@@ -48,14 +66,12 @@
             content: none;
         }
     </style>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Let's quiz</title>
 </head>
-
 
 <body>
     <div class="body">
@@ -67,29 +83,27 @@
 
         <div class="container">
             <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-                {% if request.user.is_authenticated %}
-                    <a class="navbar-brand" href="{% url 'dashboard' %}">Witaj, {{ request.user.username }}!</a>
-                {%  endif %}
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <a class="navbar-brand" href="{% url 'dashboard' %}">Storna główna</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                     <span class="navbar-toggler-icon"></span>
-                  </button>
+                </button>
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav">
-                        {% if request.user.is_authenticated %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'profile' %}">Profil</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'logout' %}">Wyloguj</a>
-                            </li>
-                        {% else %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'login' %}">Zaloguj</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'signup' %}">Zarejestruj się</a>
-                            </li>
-                        {% endif %}
+                    {% if request.user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'profile' %}">Profil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'logout' %}">Wyloguj</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}">Zaloguj</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'signup' %}">Zarejestruj się</a>
+                        </li>
+                    {% endif %}
                     </ul>
                 </div>
             </nav>
