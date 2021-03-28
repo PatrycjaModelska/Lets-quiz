@@ -1,6 +1,5 @@
 # Let's quiz 
 
-
 * [About](#about)
 * [Technologies](#technologies)
 * [Running locally](#running-locally)
@@ -11,6 +10,8 @@
 friends' quizzes. Registration is required to get access to these features.
 This project is an attempt to better and more fully understand 
 Django's user management mechanisms and everything related to it.
+
+![User profile](./static/user_profile.png)
 
 ## Technologies
 Project is created with:

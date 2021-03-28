@@ -39,3 +39,11 @@ class Result(models.Model):
 
     def __str__(self):
         return f"{self.user} rozwiązała quiz {self.quiz} z wynikiem {self.score}"
+
+
+class UserAnswer(models.Model):
+    user = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='quiz_answers')
+    question =  models.ForeignKey(Question, on_delete=models.CASCADE)
+    my_answer = models.ForeignKey(Answer, on_delete=models.CASCADE, related_name='user_answers', null=True)
+    correct_answer = models.ForeignKey(Answer, on_delete=models.CASCADE, related_name='correct_answers', null=True)
+

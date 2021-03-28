@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static%}
+    <div class="row">
+        <div class="col-4">
+            <div class="title" style="text-align: center;"> <h4>{{ request.user.username | upper }}</h4></div>
+            <div class="container">
+                <img class="profile_image" src="{{ request.user.profile.get_photo_url }}"> 
+            </div>
+            <div class="container">
+                <ul class="user_tools">
+                <ol class="tools_items"><a href="{% url 'edit_photo' %}">Zmień zdjęcie</a></ol>
+                <ol class="tools_items"><a href="{% url 'password_change' %}">Zmień hasło</a></ol>
+                <ul>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="container">
+                <h4>{{ quiz.name }}</h4>
+                <p>Autor quizu: {{ quiz.owner|upper }}</p>
+                <a href="{% url 'profile' %}" class="btn btn-light" style="display: inline;">Powrót</a>
+                <a href="{% url 'quiz_view' quiz.pk %}" class="btn btn-secondary">Zagraj!</a>
+            </div>
+            <br>
+            <div class="container">
+                {% for question in questions %}
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">{{ forloop.counter }}. {{ question.text }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for useranswer in  useranswers %}
+                                {% if useranswer.question == question %}
+                                <tr>
+                                    <td  class="align-middle">
+                                        <ul>
+                                            <li>
+                                               (Twoja odpowiedź) {{ useranswer.my_answer }}
+                                            </li>
+                                            <li>
+                                                (poprawna odpowiedź) {{ useranswer.correct_answer }}
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                {% endif %}
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                  {% endfor %}
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

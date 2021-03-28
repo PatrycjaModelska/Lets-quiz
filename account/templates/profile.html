@@ -1,6 +1,6 @@
-
 {% extends 'base.html' %}
 {% block content %}
+{% load static%}
     <div class="row">
         <div class="col-4">
             <div class="title" style="text-align: center;"> <h4>{{ request.user.username | upper }}</h4></div>
@@ -15,25 +15,37 @@
             </div>
         </div>
         <div class="col-8">
-            <div class="your_quizzes">
-                <h4>Twoje Quizy ({{quizzes.count}}):</h4>
+            <div class="container">
+                <h4 style="display: inline;">Twoje Quizy ({{quizzes.count}}): </h4>
+                <a href="#" class="btn btn-info" style="display: inline;">Stwórz quiz</a>
+                <br>
+                <br>
                 <ol>
                 {% for quiz in quizzes %}
                     <li>{{quiz.name}}</li>
                 {% endfor%}
                 </ol>
-
             </div>
-            <div class="your_quizzes">
+            <div class="container">
                 <h4>Rozwiązane quizy({{results.count}}):</h4>
-                <ol>
-                {% for result in results %}
-                    <li>{{result.quiz.name}} - wynik {{result.score}}/{{result.quiz.get_question.count}}</li>
-                {% endfor%}
-                </ol>
-
+                <table class="table mb-0">
+                    <tbody>
+                        {% for result in results %}
+                        <tr>
+                          <td class="align-middle">{{ result.quiz.name }}</td>
+                          <td class="align-middle"> {{result.score}}/{{result.quiz.get_question.count}}</td>
+                          <td class="text-right">
+                            <a href="{% url 'quiz_result_details' result.quiz.pk result.user %}" class="btn btn-secondary">Szczegóły</a>
+                          </td>
+                        </tr>
+                      {% empty %}
+                        <tr>
+                          <td colspan="4">Nie rozwiązałeś jeszcze żadnych quizów.</td>
+                        </tr>
+                        {% endfor%}
+                    </tbody>
+                </table>
             </div>
         </div>
-
     </div>
 {% endblock %}

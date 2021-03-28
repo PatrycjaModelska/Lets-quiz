@@ -32,7 +32,7 @@ body {
 }
 
 .btn {
-    display: inline-block;
+    display:inline-flex ;
     font-weight: 400;
     text-align: center;
     white-space: nowrap;
@@ -69,6 +69,7 @@ body {
             <h2>Brawo {{ result.user }}!</h2>
             <p>Twój wynik to:</p> 
             <h1> {{ result.score }} na {{ result.quiz.get_question.count}}</h1>
+            <a href="#" class="btn btn-light"  role="button">Pokaż szczegóły</a>
             <a href="{% url 'profile' %}" class="btn btn-light"  role="button">Wróć do profilu</a>
         </div>  
     </body>
